@@ -1,6 +1,6 @@
 import boto3
 
-def create_delivery_stream(deliveryStream,streamType,streamARN,roleARN):
+def create_delivery_stream(deliveryStream,streamType,streamARN,roleARN,s3ARN):
 	firehose = boto3.client('firehose')	
 	response = fireshose.create_delivery_stream(
 		DeliveryStreamName = deliveryStream,
@@ -10,7 +10,7 @@ def create_delivery_stream(deliveryStream,streamType,streamARN,roleARN):
 			'RoleARN' : roleARN
 		},
 		S3DestinationConfiguration = {
-			'RoleARN': ,
+			'RoleARN': s3ARN,
 			'BucketARN': bucketARN,
 		} 	
 	)
