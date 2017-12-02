@@ -11,7 +11,7 @@ def create_delivery_stream(deliveryStream,streamType,streamARN,roleARN,s3ARN):
 		},
 		S3DestinationConfiguration = {
 			'RoleARN': s3ARN,
-			'BucketARN': bucketARN,
+			'BucketARN': bucketARN
 		} 	
 	)
 	return response
